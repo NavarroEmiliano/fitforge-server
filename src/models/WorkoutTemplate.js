@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../database/database')
 
-const TrainingTemplate = sequelize.define(
-  'Training_Template',
+const WorkoutTemplate = sequelize.define(
+  'Workout_Template',
   {
     template_id: {
       type: DataTypes.INTEGER,
@@ -18,4 +18,4 @@ const TrainingTemplate = sequelize.define(
   }
 )
 
-module.exports = TrainingTemplate
+module.exports = WorkoutTemplate

@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const { User } = require('../models/index')
 
 const getAllUsers = async () => {
   const allUsers = await User.findAll({
@@ -17,9 +17,9 @@ const getOneUser = async id => {
 const createNewUser = async newUser => {
   const user = await User.findOrCreate({
     where: { userName: newUser.userName },
-    defaults: newUser,
+    defaults: newUser
   })
-  
+
   return user
 }
 

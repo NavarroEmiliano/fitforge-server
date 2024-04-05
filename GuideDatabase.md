@@ -65,7 +65,7 @@
 - **workout template** hasMany **set**
 - **set** belongsTo **workout template**
 
-- **set** has **exercise**
+- **set** hasOne **exercise**
 - **exercise** belongsToMany **set**
 
 - **user** hasMany **record**
