@@ -4,8 +4,8 @@ const Exercise = require('./Exercise')
 const Set = require('./Set')
 const Record = require('./Record')
 
-User.hasMany(WorkoutTemplate, { foreignKey: 'user_id' })
-WorkoutTemplate.belongsTo(User, { foreignKey: 'user_id' })
+  User.hasMany(WorkoutTemplate, { foreignKey: 'user_id' })
+  WorkoutTemplate.belongsTo(User, { foreignKey: 'user_id' })
 
 User.hasMany(Record, { foreignKey: 'user_id' })
 Record.belongsTo(User, { foreignKey: 'user_id' })
