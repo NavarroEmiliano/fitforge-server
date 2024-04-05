@@ -24,10 +24,10 @@ const Exercise = sequelize.define(
       type: DataTypes.STRING
     },
     secondary_muscles: {
-      type: DataTypes.ARRAY
+      type: DataTypes.ARRAY(DataTypes.STRING)
     },
     instructions: {
-      type: DataTypes.ARRAY
+      type: DataTypes.ARRAY(DataTypes.STRING)
     }
   },
   {

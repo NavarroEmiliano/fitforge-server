@@ -13,8 +13,8 @@ Record.belongsTo(User, { foreignKey: 'user_id' })
 WorkoutTemplate.hasMany(Set, { foreignKey: 'template_id' })
 Set.belongsTo(WorkoutTemplate, { foreignKey: 'template_id' })
 
-Set.hasOne(Exercise, { foreignKey: 'exercise_id' })
-Exercise.belongsToMany(Set, { foreignKey: 'exercise_id' })
+Set.hasOne(Exercise)
+Exercise.belongsToMany(Set)
 
 module.exports = {
   User,
