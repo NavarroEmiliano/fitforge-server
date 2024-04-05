@@ -71,4 +71,6 @@
 - **user** hasMany **record**
 - **record** belongsTo **user**
 
-## Driagrama
+### Driagrama Relacional de la DB
+
+![Modelo Relacional](./gym_app_diagram.drawio.png)
