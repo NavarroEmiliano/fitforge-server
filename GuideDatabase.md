@@ -13,7 +13,7 @@
 
 ## Listado de Entidades
 
-### Usuarios **(ED)**
+### users **(ED)**
 
 - user_id **(PK)**
 - email
@@ -22,7 +22,7 @@
 - password_hash
 - admin
 
-### Ejercicios **(EC)**
+### exercises **(EC)**
 
 - exercise_id **(PK)**
 - body_part
@@ -33,30 +33,33 @@
 - secondary_muscles
 - instructions
 
-### Plantilla de entrenamiento **(ED)**
+### workout template **(ED)**
 
 - template_id **(PK)**
 - user_id **(FK)**
 - name
-- exercises
 
-### Ejercicios
-
-- exercise_id **(PK)**
-- exercise_name **(FK)**
-- sets
-
-### Series **(ED)**
+### sets **(ED)**
 
 - set_id **(PK)**
 - template_id **(FK)**
-- exercise_name
+- exercise_id **(FK)**
 - weight
 - repetitions
-- type_serie
+- type_set
+
+
+### records **(ED)**
+
+- record_id **(PK)**
+- template_name
+- user_id **(FK)**
+- sets
+- duration
 
 ## Relaciones
 
-1. Un **Usuario** tiene **Plantilla** (_1 - M_).
-1. Una **Plantilla** tiene **Ejercicios** (_1 - M_).
-1. Una **Ejercicio** tiene **Series** (_1 - M_).
+1. Un **Usuario** tiene **Plantillas** (_1 - M_).
+1. Una **Plantilla** tiene **Series** (_1 - M_).
+1. Una **Serie** tiene **Ejercicio** (_1 - M_).
+1. Un **Usuario** tiene **Registros** (_1 - M_).
