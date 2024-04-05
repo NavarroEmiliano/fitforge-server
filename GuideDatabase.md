@@ -71,6 +71,51 @@
 - **user** hasMany **record**
 - **record** belongsTo **user**
 
-### Driagrama Relacional de la DB
+## Diagrama Relacional de la DB
 
 ![Modelo Relacional](./gym_app_diagram.drawio.png)
+
+## Reglas de negocio
+
+### users
+
+1. Crear un usuario
+1. Modificar un usuario
+1. Eliminar usuario
+
+1. Obtener usuario(admin)
+1. Obtener todos los usuarios(admin)
+
+### exercises
+
+1. Obtener ejercicio
+1. Obtener todos los ejercicios
+
+1. Crear ejercicio(admin)
+1. Modificar ejercicio(admin)
+1. Eliminar ejercicio(admin)
+
+### workout template
+
+1. Crear template
+1. Modificar template
+1. Obtener template
+1. Eliminar template
+
+### sets
+1. Crear set
+1. Modificar set
+1. Obtener set
+1. Eliminar set
+
+1. Obtener todos los sets(Admin)
+
+
+### records
+
+1. Crear record
+1. Obtener record
+1. Eliminar record
+1. Obtener todos los sets()
+
+
