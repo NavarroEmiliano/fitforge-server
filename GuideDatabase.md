@@ -59,7 +59,16 @@
 
 ## Relaciones
 
-1. Un **Usuario** tiene **Plantillas** (_1 - M_).
-1. Una **Plantilla** tiene **Series** (_1 - M_).
-1. Una **Serie** tiene **Ejercicio** (_1 - M_).
-1. Un **Usuario** tiene **Registros** (_1 - M_).
+- **user** hasMany **workout template**
+- **workout template** belongsTo **user**
+
+- **workout template** hasMany **set**
+- **set** belongsTo **workout template**
+
+- **set** has **exercise**
+- **exercise** belongsToMany **set**
+
+- **user** hasMany **record**
+- **record** belongsTo **user**
+
+## Driagrama
