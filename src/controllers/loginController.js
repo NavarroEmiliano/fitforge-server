@@ -1,40 +1,16 @@
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
+const loginService = require('../services/loginService')
 
-const User = require('../models/User')
+const loginUserController = async (req, res) => {
+  try {
+    const { email, password } = req.body
 
-const loginUser = async (req, res) => {
-  const { userName, password } = req.body
-
-  const user = await User.findOne({
-    where: {
-      userName
-    }
-  })
-
-   const passwordCorrect =
-    user === null
-      ? false
-      : await bcrypt.compare(password, user.passwordHash)
-
-
-  if (!(user && passwordCorrect)) {
-    return res.status(401).json({
-      error: 'Invalid username or password'
-    })
+    const user = await loginService.loginUser(email, password)
+    return res.status(200).send({ status: 'OK', data: user })
+  } catch (error) {
+    return res
+      .status(error.status || 500)
+      .send({ status: 'FAILED', data: error.message })
   }
-
-  const userForToken = {
-    username: user.userName,
-    id: user.id
-  }
-
-
-  const token = jwt.sign(userForToken, process.env.SECRET, {
-    expiresIn: 60 * 60
-  })
-
-  res.status(200).send({ token, username: user.userName, firsName: user.firstName }) 
 }
 
-module.exports = { loginUser }
+module.exports = { loginUserController }
