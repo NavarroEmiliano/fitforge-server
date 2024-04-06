@@ -4,7 +4,7 @@ const sequelize = require('../database/database')
 const Set = sequelize.define(
   'Set',
   {
-    set_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
@@ -15,7 +15,7 @@ const Set = sequelize.define(
     repetitions: {
       type: DataTypes.INTEGER
     },
-    type_set: {
+    typeSet: {
       type: DataTypes.INTEGER
     }
   },

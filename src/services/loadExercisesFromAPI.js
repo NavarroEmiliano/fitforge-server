@@ -1,4 +1,4 @@
-const axios = require('axios')
+/* const axios = require('axios')
 const { Exercise } = require('../models/index')
 
 const options = {
@@ -14,17 +14,8 @@ const options = {
 const loadExercisesFromAPI = async () => {
   try {
     const { data } = await axios.request(options)
-    const modifiedProperties = data.map(exercise => ({
-      exercise_id: exercise.id,
-      body_part: exercise.bodyPart,
-      equipment: exercise.equipment,
-      gif_url: exercise.gifUrl,
-      name: exercise.name,
-      target: exercise.target,
-      secondary_muscles: exercise.secondaryMuscles,
-      instructions: exercise.instructions
-    }))
-    const exercises = await Exercise.bulkCreate(modifiedProperties)
+
+    const exercises = await Exercise.bulkCreate(data)
     if (exercises.length)
       return 'All exercises were uploaded to the database successfully'
   } catch (error) {
@@ -35,3 +26,4 @@ const loadExercisesFromAPI = async () => {
 module.exports = {
   loadExercisesFromAPI
 }
+ */

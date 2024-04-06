@@ -4,7 +4,7 @@ const sequelize = require('../database/database')
 const Record = sequelize.define(
   'Record',
   {
-    record_id: {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true

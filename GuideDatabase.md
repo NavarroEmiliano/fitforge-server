@@ -15,45 +15,51 @@
 
 ### users **(ED)**
 
-- user_id **(PK)**
+- id **(PK)**
 - email
-- first_name
-- last_name
-- password_hash
+- firstName
+- lastName
+- passwordHash
 - admin
 
 ### exercises **(EC)**
 
-- exercise_id **(PK)**
-- body_part
+- id **(PK)**
+- bodyPart
 - equipment
-- gif_url
+- gifUrl
 - name
 - target
-- secondary_muscles
+- secondaryMuscles
 - instructions
 
 ### workout template **(ED)**
 
-- template_id **(PK)**
-- user_id **(FK)**
+- id **(PK)**
+- userId **(FK)**
 - name
+
+### workout template_x_exercise **(EP)**
+  
+- id **(PK)**
+- workoutTemplateId **(FK)**
+- exerciseId **(FK)**
+
 
 ### sets **(ED)**
 
-- set_id **(PK)**
-- template_id **(FK)**
-- exercise_id **(FK)**
+- id **(PK)**
+- workoutTemplateExerciseId **(FK)**
 - weight
 - repetitions
-- type_set
+- typeSet
 
 
 ### records **(ED)**
 
-- record_id **(PK)**
-- template_name
-- user_id **(FK)**
+- id **(PK)**
+- templateName
+- userId **(FK)**
 - sets
 - duration
 
@@ -62,14 +68,15 @@
 - **user** hasMany **workout template**
 - **workout template** belongsTo **user**
 
+- **user** hasMany **record**
+- **record** belongsTo **user**
+
 - **workout template** hasMany **set**
 - **set** belongsTo **workout template**
 
 - **set** hasOne **exercise**
 - **exercise** belongsToMany **set**
 
-- **user** hasMany **record**
-- **record** belongsTo **user**
 
 ## Diagrama Relacional de la DB
 

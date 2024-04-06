@@ -3,23 +3,27 @@ const WorkoutTemplate = require('./WorkoutTemplate')
 const Exercise = require('./Exercise')
 const Set = require('./Set')
 const Record = require('./Record')
+const WorkoutTemplate_Exercise = require('./WorkoutTemplateExercise')
 
-  User.hasMany(WorkoutTemplate, { foreignKey: 'user_id' })
-  WorkoutTemplate.belongsTo(User, { foreignKey: 'user_id' })
+User.hasMany(WorkoutTemplate)
+WorkoutTemplate.belongsTo(User)
 
-User.hasMany(Record, { foreignKey: 'user_id' })
-Record.belongsTo(User, { foreignKey: 'user_id' })
+User.hasMany(Record)
+Record.belongsTo(User)
 
-WorkoutTemplate.hasMany(Set, { foreignKey: 'template_id' })
-Set.belongsTo(WorkoutTemplate, { foreignKey: 'template_id' })
+WorkoutTemplate.belongsToMany(Exercise, { through: WorkoutTemplate_Exercise })
+Exercise.belongsToMany(WorkoutTemplate, { through: WorkoutTemplate_Exercise })
 
-Set.hasOne(Exercise)
-Exercise.belongsToMany(Set)
+
+/
+WorkoutTemplate_Exercise.hasMany(Set)
+Set.belongsTo(WorkoutTemplate_Exercise) 
 
 module.exports = {
   User,
   WorkoutTemplate,
   Exercise,
   Set,
-  Record
+  Record,
+  WorkoutTemplate_Exercise
 }

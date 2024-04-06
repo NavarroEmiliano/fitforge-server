@@ -12,8 +12,8 @@ const connection = async () => {
     console.log(
       'The connection to the database has been established successfully.'
     )
-    const response = await loadExercisesFromAPI()
-    console.log(response)
+/*     const response = await loadExercisesFromAPI()
+    console.log(response) */
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`)
     })

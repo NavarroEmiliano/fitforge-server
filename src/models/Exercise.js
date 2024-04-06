@@ -4,17 +4,17 @@ const sequelize = require('../database/database')
 const Exercise = sequelize.define(
   'Exercise',
   {
-    exercise_id: {
+    id: {
       type: DataTypes.STRING,
       primaryKey: true
     },
-    body_part: {
+    bodyPart: {
       type: DataTypes.STRING
     },
     equipment: {
       type: DataTypes.STRING
     },
-    gif_url: {
+    gifUrl: {
       type: DataTypes.STRING
     },
     name: {
@@ -23,7 +23,7 @@ const Exercise = sequelize.define(
     target: {
       type: DataTypes.STRING
     },
-    secondary_muscles: {
+    secondaryMuscles: {
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
     instructions: {
