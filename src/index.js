@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001
 
 const connection = async () => {
   try {
-    await sequelize.sync({ force: true })
+    await sequelize.sync({ force: false })
     console.log(
       'The connection to the database has been established successfully.'
     )
