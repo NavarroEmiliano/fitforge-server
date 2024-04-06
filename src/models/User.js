@@ -20,6 +20,10 @@ const User = sequelize.define(
     },
     passwordHash: {
       type: DataTypes.STRING
+    },
+    admin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   },
   {
