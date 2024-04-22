@@ -21,6 +21,7 @@ const getOneUser = async id => {
 }
 
 const createNewUser = async newUser => {
+
   const [user, created] = await User.findOrCreate({
     where: { email: newUser.email },
     defaults: newUser

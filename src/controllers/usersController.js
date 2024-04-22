@@ -20,8 +20,8 @@ const getOneUserController = async (req, res) => {
 
 const createNewUserController = async (req, res) => {
   try {
-    const { email, firstName, lastName, password } = req.body
-    if (!email || !firstName || !lastName || !password) {
+    const { email, userName, password } = req.body
+    if (!email || !userName || !password) {
       return res.status(400).send({
         status: 'FAILED',
         data: {
@@ -35,8 +35,7 @@ const createNewUserController = async (req, res) => {
 
     const newUser = {
       email,
-      firstName,
-      lastName,
+      userName,
       passwordHash
     }
     const user = await usersService.createNewUser(newUser)

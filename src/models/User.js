@@ -10,15 +10,19 @@ const User = sequelize.define(
       autoIncrement: true
     },
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
     },
-    firstName: {
-      type: DataTypes.STRING
-    },
-    lastName: {
-      type: DataTypes.STRING
+    userName: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     passwordHash: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    userPhoto: {
       type: DataTypes.STRING
     },
     admin: {

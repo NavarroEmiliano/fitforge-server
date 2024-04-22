@@ -30,7 +30,7 @@ const loginUser = async (email, password) => {
     expiresIn: 60 * 60
   })
 
-  return { token, email: user.email, firsName: user.firstName }
+  return { token, email: user.email, userName: user.userName }
 }
 
 module.exports = {

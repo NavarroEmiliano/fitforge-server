@@ -9,6 +9,10 @@ const Record = sequelize.define(
       primaryKey: true,
       autoIncrement: true
     },
+    userId:{
+      type:DataTypes.INTEGER,
+    }
+    ,
     sets: {
       type: DataTypes.JSON
     },

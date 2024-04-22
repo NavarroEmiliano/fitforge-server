@@ -15,7 +15,6 @@ WorkoutTemplate.belongsToMany(Exercise, { through: WorkoutTemplate_Exercise })
 Exercise.belongsToMany(WorkoutTemplate, { through: WorkoutTemplate_Exercise })
 
 
-/
 WorkoutTemplate_Exercise.hasMany(Set)
 Set.belongsTo(WorkoutTemplate_Exercise) 
 

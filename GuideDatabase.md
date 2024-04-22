@@ -17,8 +17,7 @@
 
 - id **(PK)**
 - email
-- firstName
-- lastName
+- userName
 - passwordHash
 - admin
 
